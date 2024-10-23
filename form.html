@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="https://www.google.com" method="">
+        Name<br><input type="text" name="name"><br>
+        Email<br><input type="email" name="email"><br>
+        password<br><input type="password" name="pass1"><br>
+        city<br><input type="text" name="city1"><br> 
+        <button type="submit">submit</button> 
+    </form>
+    <script>
+        let form=document.getElementsByTagName("form")[0]
+        var n1=document.getElementsByName("name")[0]
+        var ele=document.getElementsByName("email")[0]
+        var pass=document.getElementsByName("pass1")[0]
+        var city=document.getElementsByName("city1")[0]
+        var btn=document.getElementsByTagName("button")[0]
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault()
+            console.log("submitted")
+            let obj={}
+            obj.name=n1.value
+            obj.email=ele.value
+            obj.password=pass.value
+            obj.c1=city.value
+            console.log(obj)
+        })
+        </script>
+        <br>
+        <br>
+        
+        <div id="grandparent">Gramdparent
+            <br>
+            <br>
+        <div class="parent">parent
+            <br>
+            <br>
+            <div id="child">Child</div>
+        </div>
+    </div>
+    <script>
+        const grand=document.getElementById("grandparent")
+        grand.addEventListener("click", ()=>{
+            console.log("Hi from grandparent")
+        })
+        let pare=document.getElementsByClassName("parent")[0]
+        pare.addEventListener("click", (e)=>{
+            e.stopPropagation()
+           console.log("hello from parent")
+        })
+        let c2=document.getElementById("child")
+        c2.addEventListener("click", (e)=>{
+            e.stopImmediatePropagation()
+            console.log("hello from child")
+        })
+        c2.addEventListener("click", (e)=>{
+            e.stopPropagation()
+            console.log("hello from child")
+        })
+        c2.addEventListener("click", (e)=>{
+            e.stopPropagation()
+            console.log("hello from child")
+        })
+        let a=0
+        let b=a??50
+        console.log(a)
+        //sum of 2 numbers
+        function sum(a,b){
+            b=b??20
+            c=a+b
+            return c 
+        }
+        console.log(sum(30))
+        
+        
+
+
+    </script>
+</body>
+</html>
